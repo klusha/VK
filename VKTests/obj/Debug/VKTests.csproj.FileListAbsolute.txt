@@ -1,0 +1,9 @@
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\bin\Debug\VKTests.dll
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\bin\Debug\VKTests.pdb
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\bin\Debug\ConsoleApplication10.exe
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\bin\Debug\ConsoleApplication10.pdb
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\obj\Debug\VKTests.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\obj\Debug\VKTests.dll
+D:\Documents\Visual Studio 2012\Projects\ConsoleApplication10\VKTests\obj\Debug\VKTests.pdb
