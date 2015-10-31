@@ -1,0 +1,8 @@
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\VK.exe.config
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\VK.exe
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\VK.pdb
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\MySql.Data.dll
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\Newtonsoft.Json.dll
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\Newtonsoft.Json.xml
+d:\documents\visual studio 2012\Projects\VK\VK\obj\Debug\VK.exe
+d:\documents\visual studio 2012\Projects\VK\VK\obj\Debug\VK.pdb

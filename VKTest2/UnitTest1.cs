@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VK;
+using V
 using System.Collections;
 using System.Collections.Generic;
 
-namespace VKTests
+namespace VKTest2
 {
     [TestClass]
     public class UnitTest
