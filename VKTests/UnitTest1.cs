@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VK;
 using System.Collections;
 using System.Collections.Generic;
+using VK;
+using System.Linq;
 
 namespace VKTests
 {
@@ -44,7 +45,7 @@ namespace VKTests
         {
             StatisticsMaster sm = new StatisticsMaster();
             Dic dic = new Dic();
-            Assert.AreEqual(2, sm.SortGroups(dic.CountGroups, 2).Count);
+            Assert.AreEqual(6, sm.SortGroups(dic.CountGroups, 6).Count);
         }
 
         [TestMethod]
@@ -53,9 +54,7 @@ namespace VKTests
             StatisticsMaster sm = new StatisticsMaster();
             Dic dic = new Dic();
             Dictionary<String, int> result = sm.SortGroups(dic.CountGroups, 2);
-            IEnumerator enumerator = result.Values.GetEnumerator();
-            enumerator.MoveNext();
-            object first = enumerator.Current;
+            var first = result.Values.First();
             Assert.AreEqual(4, first);
         }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace VK
@@ -90,7 +89,7 @@ namespace VK
 
         public void Top(String url, int quantity)
         {
-            statisticsMaster.SortGroups(statisticsMaster.RepeatGroups(GroupsOfFriends(FriendsList(GetId(url)))), quantity);
+            statisticsMaster.PrintTop(statisticsMaster.RepeatGroups(GroupsOfFriends(FriendsList(GetId(url)))), quantity);
         }
     }
 }

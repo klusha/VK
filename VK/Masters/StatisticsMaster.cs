@@ -47,13 +47,23 @@ namespace VK
             {
                 if (i <= quantity)
                 {
-                    result.Add(GetNameGroup(pair.Key), pair.Value);
-                    Console.WriteLine(i + "-ое место: {0}: {1}", GetNameGroup(pair.Key), pair.Value);
+                    result.Add(pair.Key, pair.Value);                    
                     i++;
                 }
                 else break;
             }
             return result;
+        }
+
+        public void PrintTop(Dictionary<String, int> MassRepeatGroups, int quantity)
+        {
+            int i = 1;
+            MassRepeatGroups = SortGroups(MassRepeatGroups, quantity);
+            foreach (var groupID in MassRepeatGroups)
+            {
+                Console.WriteLine(i + "-ое место: {0}: {1}", GetNameGroup(groupID.Key), groupID.Value);
+                i++;
+            }
         }
 
         //public void SortGroups(Dictionary<String, int> MassRepeatGroups, int quantity)
