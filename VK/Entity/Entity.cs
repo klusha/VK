@@ -8,7 +8,7 @@ namespace VK.Entity
 {
     public class Entity
     {
-        public int Id;
+        protected int Id;
         public int GetId()
         {
             return Id;

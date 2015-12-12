@@ -11,10 +11,10 @@ namespace VK.Mappers
     {
         //public DBMaster dbMaster = new DBMaster();
         //void Update(T user);
-        void Insert(T user);
+        void Insert(List<T> user);
         //        void Delete(T user);
 
-        //        T FindById(int id);
+        T FindById(int id);
         //        T FindByIdFriend(String id_friend);
     }
 }

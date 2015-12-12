@@ -10,22 +10,25 @@ namespace VK.Mappers
 {
     public class FriendsMapper : IVkEntityMapperBase<Friend>
     {
-        DBMaster dbMaster = new DBMaster();
+        private DBMaster dbMaster = new DBMaster();
         //public void Update(Friends user);
-        public void Insert(Friend friend)
+        public void Insert(List<Friend> friends)
         {
             DBMaster dbMaster = new DBMaster();
             dbMaster.OpenConnection();
-            try
+            foreach (var friend in friends)
             {
-                MySqlCommand command = dbMaster.GetConnection().CreateCommand();
-                command.CommandText = "INSERT INTO Friends (id_vk) VALUES (\"" + friend.GetVkId() + "\")";
-                command.ExecuteNonQuery();
+                try
+                {
+                    MySqlCommand command = dbMaster.GetConnection().CreateCommand();
+                    command.CommandText = "INSERT INTO Friends (id_vk) VALUES (\"" + friend.GetVkId() + "\")";
+                    command.ExecuteNonQuery();
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
             dbMaster.CloseConnection();
         }

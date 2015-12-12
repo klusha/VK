@@ -47,29 +47,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\IApi.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\EntityFriends.cs" />
     <Compile Include="Entity\Friend.cs" />
     <Compile Include="Entity\Group.cs" />
     <Compile Include="Entity\GroupsFriends.cs" />
     <Compile Include="Entity\ListFriends.cs" />
+    <Compile Include="Entity\Tops.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Entity\VKEntity.cs" />
     <Compile Include="Mappers\FriendsMapper.cs" />
     <Compile Include="Mappers\GroupMapper.cs" />
     <Compile Include="Mappers\GroupsFriendsMapper.cs" />
+    <Compile Include="Mappers\IEntityMapperBase.cs" />
     <Compile Include="Mappers\IFriendEntityMapperBase.cs" />
     <Compile Include="Mappers\IVkEntityMapperBase.cs" />
     <Compile Include="Mappers\ListFriendsMapper.cs" />
+    <Compile Include="Mappers\TopsMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Masters\DBMaster.cs" />
     <Compile Include="Masters\HTTPMaster.cs" />
     <Compile Include="Masters\InternetToDataBase.cs" />
     <Compile Include="Masters\JSONMaster.cs" />
     <Compile Include="Masters\StatisticsMaster.cs" />
+    <Compile Include="Masters\Top.cs" />
+    <Compile Include="Masters\UpdateMaster.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VKClient.cs" />
+    <Compile Include="Api\VKClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

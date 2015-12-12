@@ -11,7 +11,7 @@ namespace VK.Mappers
     {
         //DBMaster dbMaster = new DBMaster();
         //abstract void Update(T user) { }
-        void Insert(T user);
+        void Insert(List<T> user);
         //void Delete(T user);
 
         T FindById(int id);

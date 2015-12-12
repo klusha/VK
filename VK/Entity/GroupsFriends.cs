@@ -8,7 +8,7 @@ namespace VK.Entity
 {
     public class GroupsFriends : EntityFriends
     {
-        public int IdGroup;
+        private int IdGroup;
 
         public GroupsFriends(int IdFriend, int IdGroup)
         {

@@ -4,5 +4,25 @@ d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\VK.pdb
 d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\MySql.Data.dll
 d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\Newtonsoft.Json.dll
 d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\Newtonsoft.Json.xml
+d:\documents\visual studio 2012\Projects\VK\VK\obj\Debug\VK.csprojResolveAssemblyReference.cache
 d:\documents\visual studio 2012\Projects\VK\VK\obj\Debug\VK.exe
 d:\documents\visual studio 2012\Projects\VK\VK\obj\Debug\VK.pdb
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\nunit.framework.dll
+d:\documents\visual studio 2012\Projects\VK\VK\bin\Debug\nunit.framework.xml
+C:\Users\Михаил\Desktop\VK\VK\bin\Debug\VK.exe.config
+C:\Users\Михаил\Desktop\VK\VK\obj\Debug\VK.exe
+C:\Users\Михаил\Desktop\VK\VK\obj\Debug\VK.pdb
+C:\Users\Михаил\Desktop\VK\VK\bin\Debug\VK.exe
+C:\Users\Михаил\Desktop\VK\VK\bin\Debug\VK.pdb
+C:\Users\Михаил\Desktop\VK\VK\bin\Debug\MySql.Data.dll
+C:\Users\Михаил\Desktop\VK\VK\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Михаил\Desktop\VK\VK\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Михаил\Desktop\VK\VK\obj\Debug\VK.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\bin\Debug\VK.exe.config
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\obj\Debug\VK.exe
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\obj\Debug\VK.pdb
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\bin\Debug\VK.exe
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\bin\Debug\VK.pdb
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\bin\Debug\MySql.Data.dll
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Михаил\Desktop\Ыыч\VK\VK\bin\Debug\Newtonsoft.Json.xml

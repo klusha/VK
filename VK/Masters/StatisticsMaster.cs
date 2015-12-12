@@ -10,6 +10,32 @@ namespace VK
     {
         HTTPMaster httpMaster = new HTTPMaster();
         JSONMaster jsonMaster = new JSONMaster();
+
+
+        public Dictionary<int, int> RepeatGroups(List<int> IdGroups)
+        {
+            Dictionary<int, int> massRepeatGroups = new Dictionary<int, int>();
+            foreach (var currIdGroup in IdGroups)
+            {
+                int count = 0;
+                foreach (var nextIdGroup in IdGroups)
+                {
+                    if (currIdGroup.Equals(nextIdGroup))
+                        count++;
+                }
+                try
+                {
+                    massRepeatGroups.Add(currIdGroup, count);
+                } catch (Exception ex)
+                {
+                }                
+                //IdGroups.Distinct();
+                //IdGroups.RemoveRange(i, count > 0 ? count + 1 : count);
+            }
+            return massRepeatGroups;
+        }
+
+
         public Dictionary<String, int> RepeatGroups(Dictionary<String, List<String>> MapGroups)
         {
             Dictionary<String, int> MassRepeatGroups = new Dictionary<String, int>();
@@ -34,6 +60,21 @@ namespace VK
             }
 
             return MassRepeatGroups;
+        }
+
+        public Dictionary<int, int> SortGroups(Dictionary<int, int> MassRepeatGroups)
+        {
+            int i = 1;
+            Dictionary<int, int> result = new Dictionary<int, int>();
+            var items = from pair in MassRepeatGroups
+                        orderby pair.Value descending
+                        select pair;
+            foreach (KeyValuePair<int, int> pair in items)
+            {
+               result.Add(pair.Key, pair.Value);
+               i++;
+            }
+            return result;
         }
 
         public Dictionary<String, int> SortGroups(Dictionary<String, int> MassRepeatGroups, int quantity)

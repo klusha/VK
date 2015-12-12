@@ -8,10 +8,11 @@ using VK.Entity;
 
 namespace VK.Mappers
 {
-    public class UserMapper : IVkEntityMapperBase<User>
+    public class UserMapper : IEntityMapperBase<User>
     {
-        DBMaster dbMaster = new DBMaster();
+        private DBMaster dbMaster = new DBMaster();
         //public void Update(User user);
+
         public void Insert(User user)
         {
             //DBMaster dbMaster = new DBMaster();

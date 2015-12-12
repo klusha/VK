@@ -10,26 +10,30 @@ namespace VK.Mappers
 {
     public class GroupsFriendsMapper : IFriendEntityMapperBase<GroupsFriends>
     {
-        DBMaster dbMaster = new DBMaster();
+        private DBMaster dbMaster = new DBMaster();
         //public void Update(GroupsFriends user);
-        public void Insert(GroupsFriends groupsFriends)
+        public void Insert(List<GroupsFriends> groupsFriendses)
         {
             DBMaster dbMaster = new DBMaster();
             dbMaster.OpenConnection();
-            try
-            {
-                MySqlCommand command = dbMaster.GetConnection().CreateCommand();
-                //command.CommandText = "INSERT INTO GroupsFriends (id_friend , id_group )"
-                //                + "VALUES ((SELECT id_friend FROM friends WHERE id_friend_vk = \"" + friend.GetVkId() + "\"),"
-                //                + "(SELECT id_group FROM Groups WHERE id_group_vk = \"" + group.GetVkId() + "\" ))";
 
-                command.CommandText = "INSERT INTO Groupsfriends (id_friend, id_group) "
-                                      + "VALUES (" + groupsFriends.GetIdFriend() + ", " + groupsFriends.GetIdGroup() + ")";
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
+            foreach (var groupsFriends in groupsFriendses)
             {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    MySqlCommand command = dbMaster.GetConnection().CreateCommand();
+                    //command.CommandText = "INSERT INTO GroupsFriends (id_friend , id_group )"
+                    //                + "VALUES ((SELECT id_friend FROM friends WHERE id_friend_vk = \"" + friend.GetVkId() + "\"),"
+                    //                + "(SELECT id_group FROM Groups WHERE id_group_vk = \"" + group.GetVkId() + "\" ))";
+
+                    command.CommandText = "INSERT INTO Groupsfriends (id_friend, id_group) "
+                                          + "VALUES (" + groupsFriends.GetIdFriend() + ", " + groupsFriends.GetIdGroup() + ")";
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
             dbMaster.CloseConnection();
         }

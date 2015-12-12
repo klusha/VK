@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 using VK.Entity;
 using VK.Mappers;
+using VK.Api;
 
 namespace VK.Masters
 {
     public class InternetToDataBase
     {
-        private VKClient vkClient;
+        private IApi vkClient;
         private String URL;
 
-        public InternetToDataBase(String URL)
+        public InternetToDataBase(IApi VkClient)
         {
-            vkClient = new VKClient();
+            vkClient = VkClient;
+        }
+
+        public InternetToDataBase(String URL, IApi VkClient)
+        {
+            vkClient = VkClient;
             this.URL = URL;
         }
 
@@ -31,13 +37,33 @@ namespace VK.Masters
         private void InsertToFriends(List<String> ListFriends)
         {
             FriendsMapper friendsMapper = new FriendsMapper();
+            List<Friend> friends = null;
             //List<Friend> ListFriends = new List<Friend>();
+            friends = new List<Friend>();
             foreach (var friend in ListFriends)
             {
-                friendsMapper.Insert(new Friend(friend));
+                friends.Add(new Friend(friend));
             }
+            friendsMapper.Insert(friends);
         }
-
+        
+        public void InsertToListFriends(User user, List<String> listFriends)
+        {
+            UserMapper userMapper = new UserMapper();
+            FriendsMapper friendsMapper = new FriendsMapper();
+            ListFriendsMapper listFriendsMapper = new ListFriendsMapper();
+            //User user = userMapper.FindByVkId(vkClient.GetId(URL));
+            //List<String> listFriends = vkClient.FriendsList(vkClient.GetId(URL));
+            InsertToFriends(listFriends);
+            List<ListFriends> ListFriendses = new List<ListFriends>();
+            foreach (var vkidFriend in listFriends)
+            {
+                Friend friend = friendsMapper.FindByVkId(vkidFriend);
+                ListFriendses.Add(new ListFriends(user.GetId(), friend.GetId()));
+            }
+            listFriendsMapper.Insert(ListFriendses);
+        }
+        
         public void InsertToListFriends()
         {
             UserMapper userMapper = new UserMapper();
@@ -46,12 +72,60 @@ namespace VK.Masters
             User user = userMapper.FindByVkId(vkClient.GetId(URL));
             List<String> listFriends = vkClient.FriendsList(vkClient.GetId(URL));
             InsertToFriends(listFriends);
+            List<ListFriends> ListFriendses = new List<ListFriends>();
             foreach (var vkidFriend in listFriends)
             {
                 Friend friend = friendsMapper.FindByVkId(vkidFriend);
-                listFriendsMapper.Insert(new ListFriends(user.GetId(), friend.GetId()));
+                ListFriendses.Add(new ListFriends(user.GetId(), friend.GetId()));
             }
+            listFriendsMapper.Insert(ListFriendses);
+        }
 
+        public void InsertToGroup(User user, List<String> listVkIdFriends)
+        {
+            int i = 1;
+            UserMapper userMapper = new UserMapper();
+            //User user = userMapper.FindByVkId(vkClient.GetId(URL));
+            ListFriendsMapper listFriendsMapper = new ListFriendsMapper();
+            List<ListFriends> listFriends = new List<ListFriends>();
+            FriendsMapper friendsMapper = new FriendsMapper();
+            foreach (var vkIdFriend in listVkIdFriends)
+            {
+                ListFriends listFriend = new ListFriends(user.GetId(), friendsMapper.FindByVkId(vkIdFriend).GetId());
+                listFriends.Add(listFriend);
+            }
+            //List<ListFriends> listFriends = listFriendsMapper.FindByIdUser(user.GetId());
+            //FriendsMapper friendsMapper = new FriendsMapper();
+            foreach (var friend in listFriends)
+            {
+                GroupMapper groupMapper = new GroupMapper();
+                Friend friendObj = friendsMapper.FindById(friend.GetIdFriend());
+                String VkId = friendObj.GetVkId();
+
+
+                List<String> listgroup = vkClient.GroupsList(VkId);
+                List<Group> groupsFriend = new List<Group>(); ;
+                List<GroupsFriends> GroupsFriendses = new List<GroupsFriends>();
+                int idFriend = friendsMapper.FindByVkId(friendObj.GetVkId()).GetId();
+                GroupsFriendsMapper groupsFriendsMapper = new GroupsFriendsMapper();
+                Group group = null;
+                foreach (var vkidGroup in listgroup)
+                {
+                    group = new Group(vkidGroup);
+                    groupsFriend.Add(group);
+                }
+                groupMapper.Insert(groupsFriend);
+
+                foreach (var vkidGroup in listgroup)
+                {
+                    GroupsFriends groupsFriends = new GroupsFriends(idFriend, groupMapper.FindByVkId(vkidGroup).GetId());
+                    GroupsFriendses.Add(groupsFriends);
+                }
+                groupsFriendsMapper.Insert(GroupsFriendses);
+                Console.WriteLine("--------------------Friend number {0}", i);
+                i++;
+                listgroup.Clear();
+            }
         }
 
         public void InsertToGroup()
@@ -64,23 +138,32 @@ namespace VK.Masters
             FriendsMapper friendsMapper = new FriendsMapper();
             foreach (var friend in listFriends)
             {
+                GroupMapper groupMapper = new GroupMapper();
                 Friend friendObj = friendsMapper.FindById(friend.GetIdFriend());
                 List<String> listgroup = vkClient.GroupsList(friendObj.GetVkId());
+                List<Group> groupsFriend = new List<Group>(); ;
+                List<GroupsFriends> GroupsFriendses = new List<GroupsFriends>();
                 int idFriend = friendsMapper.FindByVkId(friendObj.GetVkId()).GetId();
+                GroupsFriendsMapper groupsFriendsMapper = new GroupsFriendsMapper();
+                Group group = null;
                 foreach (var vkidGroup in listgroup)
                 {
-                    Group group = new Group(vkidGroup);
-                    GroupMapper groupMapper = new GroupMapper();
-                    groupMapper.Insert(group);
-                    GroupsFriendsMapper groupsFriendsMapper = new GroupsFriendsMapper();
-                    GroupsFriends groupsFriends = new GroupsFriends(idFriend, groupMapper.FindByVkId(vkidGroup).GetId());
-                    groupsFriendsMapper.Insert(groupsFriends);
+                    group = new Group(vkidGroup);
+                    groupsFriend.Add(group);                   
                 }
-                i++;
+                groupMapper.Insert(groupsFriend);
+
+                foreach (var vkidGroup in listgroup)
+                {
+                    GroupsFriends groupsFriends = new GroupsFriends(idFriend, groupMapper.FindByVkId(vkidGroup).GetId());
+                    GroupsFriendses.Add(groupsFriends);
+                }
+                groupsFriendsMapper.Insert(GroupsFriendses);        
                 Console.WriteLine("--------------------Friend number {0}", i);
+                i++;
                 listgroup.Clear();
             }
-            Console.WriteLine("ЧУуууууууваааакак готово!!!!!");
+            Console.WriteLine("ЧУуууууууваааак готово!!!!!");
         }
     }
 }

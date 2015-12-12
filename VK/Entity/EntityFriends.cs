@@ -8,7 +8,7 @@ namespace VK.Entity
 {
     public class EntityFriends : Entity
     {
-        public int IdFriend;
+        protected int IdFriend;
         public void SetIdFriend(int IdFriend)
         {
             this.IdFriend = IdFriend;

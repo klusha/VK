@@ -10,22 +10,26 @@ namespace VK.Mappers
 {
     public class GroupMapper : IVkEntityMapperBase<Group>
     {
-        DBMaster dbMaster = new DBMaster();
+        private DBMaster dbMaster = new DBMaster();
         //        public void Update(Group user);
-        public void Insert(Group group)
+        public void Insert(List<Group> groups)
         {
             DBMaster dbMaster = new DBMaster();
             dbMaster.OpenConnection();
-            try
-            {
-                MySqlCommand command = dbMaster.GetConnection().CreateCommand();
-                command.CommandText = "INSERT INTO Groups (id_vk) VALUES (\"" + group.GetVkId() + "\")";
-                command.ExecuteNonQuery();
 
-            }
-            catch (Exception ex)
+            foreach (var group in groups)
             {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    MySqlCommand command = dbMaster.GetConnection().CreateCommand();
+                    command.CommandText = "INSERT INTO Groups (id_vk) VALUES (\"" + group.GetVkId() + "\")";
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
             dbMaster.CloseConnection();
         }

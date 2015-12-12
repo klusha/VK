@@ -10,26 +10,30 @@ namespace VK.Mappers
 {
     public class ListFriendsMapper : IFriendEntityMapperBase<ListFriends>
     {
-        DBMaster dbMaster = new DBMaster();
+        private DBMaster dbMaster = new DBMaster();
         //public void Update(ListFriends user);
 
-        public void Insert(ListFriends listFriends)
+        public void Insert(List<ListFriends> listFriendses)
         {
             DBMaster dbMaster = new DBMaster();
             dbMaster.OpenConnection();
-            try
+
+            foreach (var listFriends in listFriendses)
             {
-                MySqlCommand command = dbMaster.GetConnection().CreateCommand();
-                //command.CommandText = "INSERT INTO ListFriends (id_user, id_friend) "
-                //                      + "VALUES ((SELECT id FROM Users WHERE id_vk = \"" + listFriends.GetVkIdUser() + "\"),"
-                //                      + "(SELECT id FROM Friends WHERE id_vk = \"" + listFriends.GetVkIdFriend() + "\" ))";
-                command.CommandText = "INSERT INTO ListFriends (id_user, id_friend) "
-                                      + "VALUES (" + listFriends.GetIdUser() + ", " + listFriends.GetIdFriend() + ")";
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    MySqlCommand command = dbMaster.GetConnection().CreateCommand();
+                    //command.CommandText = "INSERT INTO ListFriends (id_user, id_friend) "
+                    //                      + "VALUES ((SELECT id FROM Users WHERE id_vk = \"" + listFriends.GetVkIdUser() + "\"),"
+                    //                      + "(SELECT id FROM Friends WHERE id_vk = \"" + listFriends.GetVkIdFriend() + "\" ))";
+                    command.CommandText = "INSERT INTO ListFriends (id_user, id_friend) "
+                                          + "VALUES (" + listFriends.GetIdUser() + ", " + listFriends.GetIdFriend() + ")";
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
             dbMaster.CloseConnection();
         }
