@@ -1,0 +1,16 @@
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Top.exe.config
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Top.exe
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Top.pdb
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.ActiveMQ.dll
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.dll
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\MySql.Data.dll
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.pdb
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.xml
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.ActiveMQ.pdb
+C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.ActiveMQ.xml
+C:\Users\Михаил\Desktop\Top\Top\obj\Release\Top.csprojResolveAssemblyReference.cache
+C:\Users\Михаил\Desktop\Top\Top\obj\Release\Top.exe
+C:\Users\Михаил\Desktop\Top\Top\obj\Release\Top.pdb
+D:\Downloads\Desktop\Top\Top\bin\Release\Top.exe.config
+D:\Downloads\Desktop\Top\Top\obj\Release\Top.exe
+D:\Downloads\Desktop\Top\Top\obj\Release\Top.pdb
