@@ -13,6 +13,6 @@ C:\Users\Михаил\Desktop\Server\Server\bin\Release\Newtonsoft.Json.xml
 C:\Users\Михаил\Desktop\Server\Server\obj\Release\Server.csprojResolveAssemblyReference.cache
 C:\Users\Михаил\Desktop\Server\Server\obj\Release\Server.exe
 C:\Users\Михаил\Desktop\Server\Server\obj\Release\Server.pdb
-D:\Downloads\Desktop\Server\Server\bin\Release\Server.exe.config
-D:\Downloads\Desktop\Server\Server\obj\Release\Server.exe
-D:\Downloads\Desktop\Server\Server\obj\Release\Server.pdb
+C:\Users\Наськин\VK\Server\Server\bin\Release\Server.exe.config
+C:\Users\Наськин\VK\Server\Server\obj\Release\Server.exe
+C:\Users\Наськин\VK\Server\Server\obj\Release\Server.pdb

@@ -26,7 +26,7 @@ namespace Update
                 }
             }
             catch (NullReferenceException ex)
-            { // обработка того что у пользователя нет групп или они скрыты 
+            { 
             }
             return ListGroups;
         }     

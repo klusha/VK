@@ -16,8 +16,7 @@ namespace Update
         {
             String Connect = "Database=vk;Data Source=localhost;User Id=root;Password=; charset=utf8";
             MyConnection = new MySqlConnection(Connect);
-            MyConnection.Open();
-            
+            MyConnection.Open();            
         }
 
         public MySqlConnection GetConnection()

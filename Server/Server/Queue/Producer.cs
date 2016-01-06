@@ -33,11 +33,7 @@ namespace Server
                 Console.WriteLine("Using destination: " + destination);
                 using (IMessageProducer producer = session.CreateProducer(destination))
                 {
-                    // Start the connection so that messages will be processed.
                     connection.Start();
-                    //producer.Persistent = true;
-
-                    // Send a message
                     ITextMessage request = session.CreateTextMessage(message);
 
                     producer.Send(request);

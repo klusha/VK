@@ -13,6 +13,3 @@ C:\Users\Михаил\Desktop\Server\Server\obj\Debug\Server.pdb
 C:\Users\Михаил\Desktop\Server\Server\bin\Debug\MySql.Data.dll
 C:\Users\Михаил\Desktop\Server\Server\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Михаил\Desktop\Server\Server\bin\Debug\Newtonsoft.Json.xml
-D:\Downloads\Desktop\Server\Server\bin\Debug\Server.exe.config
-D:\Downloads\Desktop\Server\Server\obj\Debug\Server.exe
-D:\Downloads\Desktop\Server\Server\obj\Debug\Server.pdb

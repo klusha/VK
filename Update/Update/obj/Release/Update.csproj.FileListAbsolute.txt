@@ -13,6 +13,6 @@ C:\Users\Михаил\Desktop\Update\Update\bin\Release\Newtonsoft.Json.xml
 C:\Users\Михаил\Desktop\Update\Update\obj\Release\Update.csprojResolveAssemblyReference.cache
 C:\Users\Михаил\Desktop\Update\Update\obj\Release\Update.exe
 C:\Users\Михаил\Desktop\Update\Update\obj\Release\Update.pdb
-D:\Downloads\Desktop\Update\Update\bin\Release\Update.exe.config
-D:\Downloads\Desktop\Update\Update\obj\Release\Update.exe
-D:\Downloads\Desktop\Update\Update\obj\Release\Update.pdb
+C:\Users\Наськин\VK\Update\Update\bin\Release\Update.exe.config
+C:\Users\Наськин\VK\Update\Update\obj\Release\Update.exe
+C:\Users\Наськин\VK\Update\Update\obj\Release\Update.pdb

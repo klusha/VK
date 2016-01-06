@@ -34,7 +34,6 @@ namespace Server
                 Console.WriteLine("Using destination: " + destination);
                 using (IMessageConsumer consumer = session.CreateConsumer(destination))
                 {
-                    // Start the connection so that messages will be processed.
                     connection.Start();
 
                     ITextMessage textMessage = consumer.Receive() as ITextMessage;
@@ -50,5 +49,6 @@ namespace Server
             }
             return message;
         }
+
     }
 }

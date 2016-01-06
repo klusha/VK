@@ -11,6 +11,6 @@ C:\Users\Михаил\Desktop\Top\Top\bin\Release\Apache.NMS.ActiveMQ.xml
 C:\Users\Михаил\Desktop\Top\Top\obj\Release\Top.csprojResolveAssemblyReference.cache
 C:\Users\Михаил\Desktop\Top\Top\obj\Release\Top.exe
 C:\Users\Михаил\Desktop\Top\Top\obj\Release\Top.pdb
-D:\Downloads\Desktop\Top\Top\bin\Release\Top.exe.config
-D:\Downloads\Desktop\Top\Top\obj\Release\Top.exe
-D:\Downloads\Desktop\Top\Top\obj\Release\Top.pdb
+C:\Users\Наськин\VK\Top\Top\bin\Release\Top.exe.config
+C:\Users\Наськин\VK\Top\Top\obj\Release\Top.exe
+C:\Users\Наськин\VK\Top\Top\obj\Release\Top.pdb

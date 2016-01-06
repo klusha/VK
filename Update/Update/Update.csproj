@@ -68,6 +68,8 @@
     <Compile Include="Mappers\FriendsMapper.cs" />
     <Compile Include="Mappers\GroupMapper.cs" />
     <Compile Include="Mappers\GroupsFriendsMapper.cs" />
+    <Compile Include="Mappers\TokenMapper.cs" />
+    <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Masrers\DBMaster.cs" />
     <Compile Include="Masrers\HTTPMaster.cs" />
     <Compile Include="Masrers\JSONMaster.cs" />

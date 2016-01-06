@@ -20,8 +20,7 @@ namespace Top
                 {
                     if (currIdGroup.Equals(nextIdGroup))
                     {
-                        count++;
-                        
+                        count++;                        
                     }
                 }
                 try
@@ -62,8 +61,7 @@ namespace Top
 
                 Top.Entity.Top top = new Top.Entity.Top(RepeatGroups(allIdGroups), idUser);
                 topMapper.Insert(top);
-            }
-            
+            }            
         }
     }
 }

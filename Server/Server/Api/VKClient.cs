@@ -10,7 +10,7 @@ namespace Server.Api
     {
         private HTTPMaster httpMaster = new HTTPMaster();
         private JSONMaster jsonMaster = new JSONMaster();
-
+       
         public List<String> FriendsList(String vkIdUser)
         {
             List<String> ListFriends = new List<String>();

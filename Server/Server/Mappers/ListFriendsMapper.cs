@@ -30,7 +30,8 @@ namespace Server.Mappers
 
         public void deleteRecord(int vkIdFriend)
         {
-            String SQL = "DELETE FROM ListFriendsForServer WHERE id_friend = " + vkIdFriend;
+            String SQL = "DELETE FROM ListFriendsForServer WHERE id_friend = "
+                        + "(SELECT id FROM User WHERE id_vk = " + vkIdFriend + ")";
             executeQuery(SQL);
         }
 
